@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>JS Contextual Menu</title>
+</head>
+<body>
+<div id="menu">
+    <h1>Este es un un titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aperiam, nisi corporis cumque consequuntur minus ullam doloremque unde perferendis sapiente necessitatibus maiores vel fugit porro mollitia asperiores soluta, ratione officia!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, at alias corrupti officia incidunt sit ipsa vitae consequuntur, quaerat, totam quos architecto est magnam dolorem odit voluptas fugiat. Perferendis, laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quae esse quos consequuntur fuga est doloribus in iste, quas adipisci pariatur a tempore doloremque. Molestias vel iste maiores ea repellendus.</p>
+</div>
+
+<script>
+    if (document.addEventListener) {
+        document.addEventListener('contextmenu', function (e) {
+            alert("You've tried to open context menu"); //here you draw your own menu
+            e.preventDefault();
+        }, false);
+    } else {
+        document.attachEvent('oncontextmenu', function () {
+            alert("You've tried to open context menu");
+            window.event.returnValue = false;
+        });
+    }
+</script>
+</body>
+</html>
